@@ -1,7 +1,7 @@
 // BASE DE DATOS DE PRODUCTOS DE K&J ARTÍCULOS ONLINE
 const productos = [
     // --- CATEGORÍA FIGURAS ---
-    { id: 1, nombre: "Figura Luffy y Shanks", categoria: "figuras", subcategoria: "onepiece", precio: 25.00, img: "img/onepiece figura2.jpg", descripcion: "Base negra, 15cm de alto" },
+    { id: 1, nombre: "Figura Luffy y Shanks", categoria: "figuras", subcategoria: "onepiece", precio: 25.00, img: "img/onepiece_figura2.jpg", descripcion: "Base negra, 15cm de alto" },
     { id: 2, nombre: "Figura Frieren (Elf)", categoria: "figuras", subcategoria: "anime", precio: 30.00, img: "img/fierenfigura.jpg", descripcion: "Edición coleccionista" },
     { id: 3, nombre: "Figura Goku Súper Saiyan", categoria: "figuras", subcategoria: "dragon-ball", precio: 25.00, img: "img/figuragoku.jpg", descripcion: "Goku en modo Super Saiyan" },
     { id: 16, nombre: "Figura Inuyasha", categoria: "figuras", subcategoria: "inuyasha", precio: 27.00, img: "img/inuyasha.jpg", descripcion: "Inuyasha con espada" },
@@ -20,17 +20,17 @@ const productos = [
 
     // --- CATEGORÍA SNACKS / COMIDA ---
     { id: 10, nombre: "Bebida Ramune (Sabores)", categoria: "snacks", precio: 3.50, img: "img/ramens.jpg", descripcion: "Sabor a fresa o limón" },
-    { id: 11, nombre: "Snacks Cantabile (Colección Pingüino)", categoria: "snacks", precio: 4.50, img: "img/bebidas coreanas.jpg", descripcion: "Bolsas de 80g" },
+    { id: 11, nombre: "Snacks Cantabile (Colección Pingüino)", categoria: "snacks", precio: 4.50, img: "img/bebidas_coreanas.jpg", descripcion: "Bolsas de 80g" },
     { id: 12, nombre: "Ramen Buldak (Picante)", categoria: "snacks", precio: 5.00, img: "img/ramens2.jpg", descripcion: "Nivel de picante 3/5" },
-    { id: 13, nombre: "Paleta de Fruta Mango", categoria: "snacks", precio: 6.00, img: "img/helado mango.jpg", descripcion: "Helado de mango" },
+    { id: 13, nombre: "Paleta de Fruta Mango", categoria: "snacks", precio: 6.00, img: "img/helado_mango.jpg", descripcion: "Helado de mango" },
     { id: 14, nombre: "Paleta de Fruta Melocotón", categoria: "snacks", precio: 6.00, img: "img/helados.jpg", descripcion: "Helado de melocotón" },
-    { id: 15, nombre: "Paleta de Limón", categoria: "snacks", precio: 6.00, img: "img/helado limon.jpg", descripcion: "Helado de limón" }
+    { id: 15, nombre: "Paleta de Limón", categoria: "snacks", precio: 6.00, img: "img/helado_limon.jpg", descripcion: "Helado de limón" }
 ];
 
+// (EL RESTO DE TU CÓDIGO JS SE MANTIENE IGUAL DESDE AQUÍ...)
 const grid = document.getElementById('grid-productos');
 const buscarInput = document.getElementById('buscador');
 
-// Variables para saber qué filtros están activos
 let categoriaActiva = 'todo';
 let subcategoriaActiva = null;
 
@@ -39,7 +39,6 @@ window.onload = function() {
     actualizarContadorCarrito();
 };
 
-// Función para mostrar productos (filtro integrado)
 function mostrarProductos(lista) {
     grid.innerHTML = '';
     lista.forEach(prod => {
@@ -56,7 +55,6 @@ function mostrarProductos(lista) {
     });
 }
 
-// Búsqueda en tiempo real
 function buscarProducto() {
     const termino = buscarInput.value.toLowerCase();
     let filtrados;
@@ -71,7 +69,6 @@ function buscarProducto() {
     mostrarProductos(filtrados);
 }
 
-// FILTRAR POR CATEGORÍA (MEJORADO)
 function filtrarPor(categoria, subcategoria) {
     categoriaActiva = categoria;
     subcategoriaActiva = subcategoria || null;
@@ -87,7 +84,6 @@ function filtrarPor(categoria, subcategoria) {
     mostrarProductos(filtrados);
 }
 
-// CARRITO DE COMPRAS (ACTUALIZADO CON IMAGEN Y DESCRIPCIÓN)
 let carrito = JSON.parse(localStorage.getItem('carritoKJ')) || [];
 
 function agregarAlCarrito(id, nombre, precio, img, descripcion) {
