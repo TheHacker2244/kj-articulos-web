@@ -18,7 +18,7 @@ const productos = [
     { id: 8, nombre: "Audífonos P9 Max", categoria: "electronicos", precio: 35.00, img: "img/auriculares.jpg", descripcion: "Cancelación de ruido" },
     { id: 9, nombre: "Llavero Seven Deadly Sins", categoria: "electronicos", precio: 5.00, img: "img/llavero7pecados.jpg", descripcion: "Llavero metálico" },
 
-    // --- CATEGORÍA SNACKS / COMIDA ---
+    // --- CATEGORÍA SNACKS / COMIDA ---    
     { id: 10, nombre: "Bebida Ramune (Sabores)", categoria: "snacks", precio: 3.50, img: "img/ramens.jpg", descripcion: "Sabor a fresa o limón" },
     { id: 11, nombre: "Snacks Cantabile (Colección Pingüino)", categoria: "snacks", precio: 4.50, img: "img/bebidas_coreanas.jpg", descripcion: "Bolsas de 80g" },
     { id: 12, nombre: "Ramen Buldak (Picante)", categoria: "snacks", precio: 5.00, img: "img/ramens2.jpg", descripcion: "Nivel de picante 3/5" },
