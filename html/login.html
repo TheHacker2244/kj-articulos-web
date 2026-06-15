@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión / Registro - K&J Artículos</title>
+    <!-- Necesitamos FontAwesome para el icono de la flecha -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <!-- Flecha de retorno -->
+    <a href="../html/index.html" class="back-arrow">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="login-container">
+        <div class="login-box">
+            <img src="../img/Logo.png" alt="Logo K&J" class="logo-login">
+            <h2>¡Únete a la comunidad K&J!</h2>
+            <p class="subtitulo">Regístrate para calificar y dejar reseñas</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="ejemplo@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <button type="submit" id="submitBtn">Iniciar Sesión</button>
+            </form>
+
+            <p id="toggle-text" style="margin-top: 15px; font-size: 14px;">
+                ¿No tienes cuenta? 
+                <a href="#" id="toggleMode">Regístrate aquí</a>
+            </p>
+            <p id="mensaje" style="font-size: 14px; margin-top: 10px;"></p>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>

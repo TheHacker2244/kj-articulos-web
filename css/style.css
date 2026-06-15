@@ -1,0 +1,353 @@
+:root {
+    --rosa: #FFB3BA;
+    --azul: #BAE1FF;
+    --lila: #D1C4E9; /* Un lila pastel más bonito */
+    --lila-oscuro: #9575CD;
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --texto-oscuro: #2d2d2d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+/* HEADER */
+header {
+    background-color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+.logo img { height: 60px; border-radius: 50%; }
+
+.menu-nav ul { display: flex; list-style: none; gap: 25px; }
+.menu-nav a { text-decoration: none; color: var(--texto-oscuro); font-weight: 600; font-size: 16px; transition: 0.3s; }
+.menu-nav a:hover { color: var(--lila-oscuro); }
+
+/* DROPDOWN ESTILO TAKTI */
+.dropdown-categoria { position: relative; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -40px;
+    background: var(--blanco);
+    min-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 999;
+}
+.dropdown-categoria:hover .dropdown-content { display: block; animation: fadeIn 0.3s ease; }
+.submenu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.submenu-grid a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+.img-circle img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--rosa);
+    transition: 0.3s;
+}
+.submenu-grid a:hover .img-circle img { border-color: var(--azul); transform: scale(1.05); }
+
+/* HEADER ACTIONS */
+.header-actions { display: flex; align-items: center; gap: 20px; }
+.btn-login {
+    background: transparent;
+    border: 1px solid var(--lila);
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: var(--texto-oscuro);
+    cursor: pointer;
+}
+.cart-icon { position: relative; font-size: 22px; color: var(--texto-oscuro); }
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--rosa);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BANNER */
+.hero-section .carrusel {
+    height: 400px;
+    background: var(--lila);
+    position: relative;
+}
+.hero-section .slide { display: none; height: 100%; }
+.hero-section .slide.active { display: block; }
+.hero-section img { width: 100%; height: 100%; object-fit: cover; }
+
+/* BÚSQUEDA */
+.search-bar-container {
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+}
+.search-bar-container input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 16px;
+}
+.search-bar-container button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: var(--lila-oscuro);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* CATÁLOGO PRODUCTOS */
+.product-section { padding: 40px 20px; max-width: 1400px; margin: 0 auto; }
+.product-section h2 { text-align: center; margin-bottom: 30px; font-weight: 700; }
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.product-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+    border: 1px solid #eee;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 10px; }
+.product-card h4 { font-size: 15px; margin: 5px 0; font-weight: 600; }
+.product-card p { color: var(--lila-oscuro); font-weight: bold; font-size: 18px; }
+.btn-add-cart {
+    background: var(--lila);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* CONTACTO Y MAPAS */
+.contact-section { background: #f1f3f4; padding: 40px 20px; }
+.contact-section h2 { text-align: center; margin-bottom: 30px; }
+.mapas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.mapa-box {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.mapa-box iframe { width: 100%; height: 250px; border-radius: 10px; }
+
+/* Redes Sociales - Quitar el subrayado y dar estilo elegante */
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.icons-container a {
+    background: #ac91de; /* Color lila de K&J */
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.3s;
+    text-decoration: none; /* ¡ESTA LÍNEA QUITA LA RAYITA! */
+}
+
+.icons-container a:hover {
+    background: #b39ddb; /* Lila un poco más oscuro al pasar el mouse */
+    transform: scale(1.1);
+}
+
+/* El icono de WhatsApp puede ser verde */
+.icons-container .whatsapp-icon {
+    background: #25D366;
+}
+.icons-container .whatsapp-icon:hover {
+    background: #128C7E;
+}
+
+.icons-container a:hover { background: var(--rosa); transform: scale(1.1); }
+.icons-container .whatsapp-icon { background: #25D366; }
+
+/* BURBUJA WHATSAPP FIJO */
+.whatsapp-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-decoration: none;
+}
+
+/* MODAL LOGIN */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+.modal-content input { width: 100%; margin: 10px 0; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+.modal-content button { background: var(--lila-oscuro); color: white; padding: 10px; width: 100%; border: none; border-radius: 8px; cursor: pointer; }
+.close-modal { float: right; font-size: 24px; cursor: pointer; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header-container { flex-wrap: wrap; padding: 10px 15px; }
+    .menu-nav ul { gap: 10px; flex-wrap: wrap; justify-content: center; margin: 10px 0; }
+    .dropdown-content { min-width: 250px; left: 0; }
+    .submenu-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .img-circle img { width: 40px; height: 40px; }
+    .header-actions { width: 100%; justify-content: center; gap: 15px; }
+    .hero-section .carrusel { height: 200px; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+footer { background: var(--texto-oscuro); color: white; text-align: center; padding: 20px; margin-top: 0; }
+
+/* --- RESTAURAR EL ESTILO DEL BOTÓN DE INICIAR SESIÓN --- */
+.header-actions .btn-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: 1.5px solid #D1C4E9; /* El borde lila */
+    border-radius: 30px;
+    padding: 8px 20px;
+    text-decoration: none;       /* Esto quita la línea subrayada */
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.header-actions .btn-login:hover {
+    background-color: #D1C4E9;
+    color: white;
+}
+
+.header-actions .btn-login i {
+    margin-right: 0; /* Asegura que no haya espacios extraños */
+}
+
+/* --- MEJORA DEL DROPDOWN MENU --- */
+.img-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #D1C4E9; /* Borde lila */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px auto;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.img-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el círculo sin deformarse */
+}
+
+/* Efecto al pasar el mouse por encima de la categoría */
+.submenu-grid a:hover .img-circle {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    border-color: #9575CD; /* Borde lila más oscuro */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.submenu-grid a {
+    text-decoration: none;
+    color: #2d2d2d;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.submenu-grid a:hover {
+    background: #f3f0f8; /* Fondo lila muy suave al pasar el mouse */
+}

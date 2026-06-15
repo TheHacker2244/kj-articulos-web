@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&J Artículos Online - Tu tienda de colección</title>
+    <!-- Fuentes Google para letra moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Enlace a tu CSS -->
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="../img/Logo.png" alt="Logo K&J">
+            </a>
+
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    
+                    <!-- Menú desplegable de Figuras -->
+                    <li class="dropdown-categoria">
+                        <a href="javascript:void(0)" onclick="filtrarPor('figuras')">Figuras <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="submenu-grid">
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'anime')">
+                                    <div class="img-circle"><img src="../img/fierenfigura.jpg" alt="Anime"></div>
+                                    <span>Anime</span>
+                                </a>
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'onepiece')">
+                                    <div class="img-circle"><img src="../img/onepiece figura2.jpg" alt="One Piece"></div>
+                                    <span>One Piece</span>
+                                </a>
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'dragon-ball')">
+                                    <div class="img-circle"><img src="../img/figuragoku.jpg" alt="Dragon Ball"></div>
+                                    <span>Dragon Ball</span>
+                                </a>
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'Inuyasha')">
+                                    <div class="img-circle"><img src="../img/inuyasha.jpg" alt="Inuyasha"></div>
+                                    <span>Inuyasha</span>
+                                </a>
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'pokemon')">
+                                    <div class="img-circle"><img src="../img/peluche.jpg" alt="Pokémon"></div>
+                                    <span>Pokémon</span>
+                                </a>
+                                <a href="javascript:void(0)" onclick="filtrarPor('figuras', 'mario')">
+                                    <div class="img-circle"><img src="../img/FiguraMarioBros.jpg" alt="Mario Bros"></div>
+                                    <span>Mario Bros</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Categorías principales -->
+                    <li><a href="javascript:void(0)" onclick="filtrarPor('peluches')">Peluches</a></li>
+                    <li><a href="javascript:void(0)" onclick="filtrarPor('snacks')">Snacks y Bebidas</a></li>
+                    <li><a href="javascript:void(0)" onclick="filtrarPor('electronicos')">Electrónicos</a></li>
+                    
+                    <!-- Botón Ver Todos -->
+                    <li><a href="javascript:void(0)" onclick="filtrarPor('todo')">Ver Todos</a></li>
+                    
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn-login" id="btn-login">
+                    <i class="fas fa-user"></i> Iniciar Sesión
+                </a>
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER / CARRUSEL -->
+    <section id="inicio" class="hero-section">
+        <div class="carrusel">
+            <div class="slide active">
+                <img src="../img/baner.png" alt="Banner 1">
+            </div>
+            <div class="slide">
+                <img src="../img/banner2.png" alt="Banner 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <div class="search-bar-container">
+        <input type="text" id="buscador" placeholder="¿Qué figura buscas hoy? Busca por nombre..." onkeyup="buscarProducto()">
+        <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section id="catalogo" class="product-section">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid" id="grid-productos">
+            <!-- Los productos los inserta JS -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO Y MAPAS -->
+    <section id="contacto" class="contact-section">
+        <h2>Encuéntranos</h2>
+        <div class="mapas-container">
+            <!-- SUCURSAL 1 (PRINCIPAL) -->
+            <div class="mapa-box">
+                <h3>Sucursal Chalatenango</h3>
+                <p>Segunda Calle Poniente, Barrio El Centro, contiguo Iglesia Leon de Judá.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.665714208836!2d-88.938397!3d14.041236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6359e48e6c4f99%3A0x1f4d9451c8c8b2a4!2sK%26J%20Art%C3%ADculos%20Online!5e0!3m2!1ses!2ssv!4v1718765432100!5m2!1ses!2ssv" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- SUCURSAL 2 (DUPLICADA TEMPORALMENTE) -->
+            <div class="mapa-box">
+                <h3>Sucursal [NOMBRE DE LA SUCURSAL]</h3>
+                <p>Dirección pendiente de confirmar. (Misma ubicación que la principal hasta tener los datos reales).</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.665714208836!2d-88.938397!3d14.041236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6359e48e6c4f99%3A0x1f4d9451c8c8b2a4!2sK%26J%20Art%C3%ADculos%20Online!5e0!3m2!1ses!2ssv!4v1718765432100!5m2!1ses!2ssv" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <p>Síguenos en nuestras redes:</p>
+            <div class="icons-container">
+                <a href="https://www.facebook.com/106379368104046" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kj_articulos/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kj.articulos" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/50360193343" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL LOGIN -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="document.getElementById('modal-login').style.display='none'">&times;</span>
+            <h3>Bienvenido a K&J</h3>
+            <input type="text" placeholder="Usuario o correo electrónico">
+            <input type="password" placeholder="Contraseña">
+            <button>Acceder</button>
+            <p>¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <!-- BURBUJA DE WHATSAPP -->
+    <a href="https://wa.me/50360193343?text=Hola%20K%26J!%20Me%20interesa%20un%20producto..." class="whatsapp-bubble" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 K&J Artículos Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
