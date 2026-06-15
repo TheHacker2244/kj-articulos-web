@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Cargar carrito desde localStorage
     let carrito = JSON.parse(localStorage.getItem('carritoKJ')) || [];
     const listaCarrito = document.getElementById('lista-productos-carrito');
     const totalSpan = document.getElementById('total-carrito');
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const cartCount = document.getElementById('cart-count');
 
     function renderizarCarrito() {
-        // Limpiar lista
         listaCarrito.innerHTML = '';
 
         if (carrito.length === 0) {
@@ -27,13 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
             const subtotal = item.precio * item.cantidad;
             total += subtotal;
 
-            // Usamos la descripción detallada del producto. Si no existe, ponemos "Sin descripción adicional"
             const descripcion = item.descripcion || 'Sin descripción adicional (consulta con el vendedor)';
 
             const div = document.createElement('div');
             div.className = 'item-carrito';
             div.innerHTML = `
-                <img src="${item.img || '../img/Logo.png'}" alt="${item.nombre}">
+                <img src="${item.img || 'img/Logo.png'}" alt="${item.nombre}">
                 <div class="info-producto">
                     <h4>${item.nombre}</h4>
                     <div class="descripcion">${descripcion}</div>
@@ -52,11 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         totalSpan.innerText = `$${total.toFixed(2)}`;
-        // Actualizar contador del header
         const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
         cartCount.innerText = totalItems;
 
-        // Agregar eventos a los botones
         document.querySelectorAll('.item-carrito .sumar').forEach(btn => {
             btn.addEventListener('click', function() {
                 const index = parseInt(this.dataset.index);
@@ -91,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function() {
         renderizarCarrito();
     }
 
-    // Botón de finalizar compra (redirige a WhatsApp)
     document.getElementById('btn-finalizar-compra').addEventListener('click', function() {
         if (carrito.length === 0) {
             alert('Tu carrito está vacío.');
@@ -109,6 +103,5 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(url, '_blank');
     });
 
-    // Renderizar al cargar
     renderizarCarrito();
 });

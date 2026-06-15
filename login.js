@@ -1,22 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Verificar si la imagen de fondo existe
-    const bgUrl = '../img/'; // Misma ruta que en CSS
+    // VERIFICACIÓN DE IMAGEN DE FONDO (CORREGIDA)
+    const bgUrl = 'img/fondo-login.jpg';
     const imgChecker = new Image();
     
     imgChecker.onload = function() {
-        // Si la imagen carga, añadimos la clase 'has-bg-image' al body
         document.body.classList.add('has-bg-image');
         console.log("✅ Imagen de fondo encontrada. ¡Efecto cristal activado!");
     };
     
     imgChecker.onerror = function() {
-        // Si la imagen NO carga, no hacemos nada (se queda el estilo sólido blanco)
         console.log("ℹ️ Imagen de fondo no encontrada. Usando estilo sólido.");
     };
     
     imgChecker.src = bgUrl;
 
-    // 2. Lógica de Login/Registro (la misma de antes)
+    // LÓGICA DE LOGIN/REGISTRO
     let users = JSON.parse(localStorage.getItem('kj_users')) || [];
     const form = document.getElementById('loginForm');
     const submitBtn = document.getElementById('submitBtn');
