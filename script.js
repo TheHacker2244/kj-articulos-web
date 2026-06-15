@@ -5,7 +5,7 @@ const productos = [
     { id: 2, nombre: "Figura Frieren (Elf)", categoria: "figuras", subcategoria: "anime", precio: 30.00, img: "../img/fierenfigura.jpg", descripcion: "Edición coleccionista" },
     { id: 3, nombre: "Figura Goku Súper Saiyan", categoria: "figuras", subcategoria: "dragon-ball", precio: 25.00, img: "../img/figuragoku.jpg", descripcion: "Goku en modo Super Saiyan" },
     { id: 16, nombre: "Figura Inuyasha", categoria: "figuras", subcategoria: "inuyasha", precio: 27.00, img: "../img/inuyasha.jpg", descripcion: "Inuyasha con espada" },
-    { id: 17, nombre: "Figura Pikachu", categoria: "figuras", subcategoria: "pokemon", precio: 22.00, img: "../img/peluche.jpg", descripcion: "Figura coleccionable de Pikachu" },
+    { id: 17, nombre: "Figura Pikachu", categoria: "figuras", subcategoria: "pokemon", precio: 22.00, img: "../img/pikachu.jpg", descripcion: "Figura coleccionable de Pikachu" },
     { id: 18, nombre: "Figura Mario Bros", categoria: "figuras", subcategoria: "Mario", precio: 28.00, img: "../img/FiguraMarioBros.jpg", descripcion: "Figura de Mario Bros Clásica" },
 
     // --- CATEGORÍA PELUCHES ---
