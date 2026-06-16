@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
         mensaje += `\nTotal: $${total.toFixed(2)}\n\nGracias!`;
 
-        const url = `https://wa.me/50360193343?text=${encodeURIComponent(mensaje)}`;
+        const url = `https://wa.me/50369586945?text=${encodeURIComponent(mensaje)}`;
         window.open(url, '_blank');
     });
 
